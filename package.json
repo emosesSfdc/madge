@@ -39,7 +39,8 @@
     "react-tools": "0.12.1",
     "resolve": "0.2.3",
     "uglify-js": "1.2.6",
-    "walkdir": "0.0.5"
+    "walkdir": "0.0.5",
+    "underscore": "^1.7.0"
   },
   "devDependencies": {
     "grunt": "0.4.4",

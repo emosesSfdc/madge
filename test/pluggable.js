@@ -53,5 +53,19 @@ describe('Madge', function () {
 		});
 	});
 
+        describe('pluggable - dependencyTransforms', function() {
+                it('should transform the dependency path', function() {
+                        var opts = {};
+                        opts.dependencyTransforms = [
+                                function(dep){
+                                        return dep.replace(/^map\//, "sub/");
+                                }
+                        ];
+
+                        madge([__dirname + '/files/cjs/remapped'], opts).obj()
+                                .should.eql({ 'a': [ 'sub/b' ], 'fancy-main/not-index': [], 'd': [], 'sub/b': [ 'sub/c' ], 'sub/c': [ 'd' ] });
+                });
+        });
+
 
 });
